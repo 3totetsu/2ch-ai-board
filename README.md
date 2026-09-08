@@ -1,1 +1,0 @@
-# 2ch-ai-board
