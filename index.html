@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2ch風 AI掲示板</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>名無しさんの掲示板</h1>
+      <p>2ch風のシンプル掲示板 + AI雑談</p>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="board">
+      <div class="panel">
+        <div class="panel-title">スレッド一覧</div>
+        <div id="threadList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">新規スレッド</div>
+        <form id="threadForm">
+          <input id="threadTitle" maxlength="80" placeholder="スレッドタイトル" required>
+          <textarea id="threadBody" maxlength="1000" placeholder="本文" required></textarea>
+          <button type="submit">スレッドを立てる</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">選択中のスレッド</div>
+        <div id="posts"></div>
+        <form id="postForm" class="post-form">
+          <input id="name" maxlength="30" placeholder="名前（名無しさんでOK）">
+          <textarea id="body" maxlength="1000" placeholder="レスを書く..." required></textarea>
+          <button type="submit">書き込む</button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="ai">
+      <div class="panel ai-panel">
+        <div class="panel-title">AI雑談室</div>
+        <div id="aiMessages" class="ai-messages">
+          <div class="ai-msg bot">AIです。雑談、質問、掲示板のネタ出しなどに使えます。</div>
+        </div>
+        <form id="aiForm">
+          <textarea id="aiInput" maxlength="2000" placeholder="AIに話しかける..." required></textarea>
+          <button type="submit">送信</button>
+        </form>
+        <p id="aiStatus" class="status">AI接続先: 未設定</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="wrap footer">
+    GitHub Pages向け静的フロントエンド
+  </footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
